@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Hello, world!</title>
+      </head>
+    <div *ngIf="loading" class="container loadingStyle">
+        <div>Loading...</div>
+    </div>
+    <div *ngIf="!loading">
+        <div class="container marginAdjust">
+            <input class="form-control searchBar" type="text" #searchInput placeholder="Search" (keyup.enter)="searchByTitle(searchInput.value)">
+        </div>
+        <div class="container marginAdjust">
+            <table class="table dataTable">
+                <thead>
+                    <th class="tableData" scope="col">Title</th>
+                    <th class="tableData" scope="col">By</th>
+                    <th class="tableData" scope="col">URL</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let story of pages">
+                        <th scope="row" class="tableData">{{story.title}}</th>
+                        <td class="tableData">{{ story.by }}</td>
+                        <td *ngIf="story.url" class="tableData"><a href="{{ story.url }}">Read Here!</a></td>
+                        <td *ngIf="!story.url" class="tableData"><a href="https://hn.algolia.com/?q={{story.title}}">Read Here!</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="container marginAdjust">
+                <div class="row">
+                    <div class="col-sm leftButton">
+                        <button class="btn btn-secondary" (click)="decrement()" [disabled]="currIndex === 1"><<</button>
+                    </div>
+                    <div class="col-sm">
+                        <input class="form-control" type="number" #indexInput value="{{currIndex}}" (keyup.enter)="searchIndex(indexInput.value)">
+                    </div>
+                    <div class="col-sm">
+                        <button class="btn btn-secondary" (click)="increment()" [disabled]="currIndex === totalPages">>></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
