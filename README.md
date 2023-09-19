@@ -3,9 +3,9 @@ A small application developed using Angular that displays the top 500 newest sto
 
 ## Development Process
 When development started on this application, I sat down and thought about the different components and services I would need to complete this task in the time given to me successfully. </br>
-<img src=""></br>
+<img src="https://github.com/ThatGhostToast/Hacker-News/blob/main/README%20Assets/Hacker%20News.png" width="75%"></br>
 After I had created this blueprint, I began reading the Angular documentation to ensure I knew enough about the framework to begin development without running into any major issues. After I felt comfortable, I began development. I decided to take the program one step at a time, beginning with collecting the IDs of the stories from the API and using them to collect the story data. Luckily, I have lots of experience working with APIs, so this step did not take me longer than a half hour. I created Angular services to hold both the ID retrieval and Story retrieval processes. After the data was successfully being returned from the API, I built the application's front end to display this data. I utilized the BootStrap framework so I could format the output data in a way that was easier to read without using too much time. I was then focused on implementing pagination to make the returned data easier to read and made a search bar component so users could locate stories by story title. With this, the main application was done and needed to have testing. I used the last of my time to ensure the ng tests were configured properly and ran successfully.</br>
-<img src=""></br>
+<img src="https://github.com/ThatGhostToast/Hacker-News/blob/main/README%20Assets/Homescreen.png" width="75%"></br>
 ## Key Application Design 
 When developing the application, I decided to develop it in such a way that it would be scalable if it needed to be built up in the future. I separated the Components and Services into their own folders to make them easier to find. This way, if the application continued to grow, a large variety of components and services could be used without the program becoming messy.
 ## Challenges Faced
